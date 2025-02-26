@@ -6,9 +6,7 @@ public class Dolar {
         double DblCotacao, DblValor;
         
         // entrada
-        // pedir a cotação e ler ela
         DblCotacao = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor da cotação do dólar"));
-        // pedir o valor e ler ele
         DblValor = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor que quer converter para reais"));
         
         // processamento e saída
