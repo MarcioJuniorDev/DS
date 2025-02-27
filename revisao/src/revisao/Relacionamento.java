@@ -16,10 +16,7 @@ public class Relacionamento
         }
         else
         {
-            if (nValor1 <= nValor2)
-            {
                 StrRel += "Menor ou igual, ";
-            }
         }
         
         if (nValor1 == nValor2)
@@ -37,10 +34,7 @@ public class Relacionamento
         }
         else
         {
-            if (nValor1 < nValor2 && nValor1 != nValor2)
-            {
                 StrRel += "menor";
-            }
         }
         
         JOptionPane.showMessageDialog(null, StrRel);
