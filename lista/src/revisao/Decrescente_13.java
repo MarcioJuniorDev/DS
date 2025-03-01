@@ -4,7 +4,7 @@ public class Decrescente_13
 {
     public static void main(String [] args)
     {
-        int nValor1, nValor2, nValor3, nPos1, nPos2 = 5, nPos3 = 5;
+        int nValor1, nValor2, nValor3, nPos1, nPos2 = 0, nPos3;
         
         // entrada
         nValor1 = (int) Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro valor"));
@@ -12,22 +12,54 @@ public class Decrescente_13
         nValor3 = (int) Double.parseDouble(JOptionPane.showInputDialog("Digite o terceiro valor"));
         
         // processamento
-        if (nValor1 < nValor2 && nValor1 < nValor3)
+        if (nValor1 > nValor2 && nValor1 > nValor3)
         {
             nPos1 = nValor1;
-            nValor1 = 2147483647;
+        }
+        else
+        {
+            if (nValor2 > nValor3)
+            {
+                nPos1 = nValor2;
+            }
+            else
+            {
+                nPos1 = nValor3;
+            }
+        }
+        
+        if (nValor2 < nValor1 && nValor2 > nValor3 || nValor2 > nValor1 && nValor2 < nValor3)
+        {
+            nPos2 = nValor2;
+        }
+        else
+        {
+            if (nValor1 < nValor2 && nValor1 > nValor3 || nValor1 > nValor2 && nValor1 < nValor3)
+            {
+                nPos2 = nValor1;
+            }
+            else
+            {
+                if (nValor3 < nValor1 && nValor3 > nValor2 || nValor3 > nValor1 && nValor3 < nValor2)
+                {
+                    nPos2 = nValor3;
+                }
+            }
+        }
+        
+        if (nValor1 < nValor2 && nValor1 < nValor3)
+        {
+            nPos3 = nValor1;
         }
         else
         {
             if (nValor2 < nValor3)
             {
-                nPos1 = nValor2;
-                nValor2 = 2147483647;
+                nPos3 = nValor2;
             }
             else
             {
-                nPos1 = nValor3;
-                nValor3 = 2147483647;
+                nPos3 = nValor3;
             }
         }
 
