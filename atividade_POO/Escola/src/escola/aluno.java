@@ -1,5 +1,8 @@
 package escola;
-public class aluno 
+
+import javax.swing.JOptionPane;
+
+public class aluno extends pessoa
 {
     // atributos
     String strRm;
@@ -9,6 +12,13 @@ public class aluno
     // métodos
     public void RecebeAlimentacao()
     {
-        
+        if (this.strPeriodo == "ETIM")
+        {
+            JOptionPane.showMessageDialog(null, "O aluno TEM direito à alimentação.");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "O aluno NÃO TEM direito à alimentação.");
+        }
     }
 }

@@ -1,5 +1,6 @@
 package escola;
 // classe pai
+import javax.swing.JOptionPane;
 public class pessoa 
 {
     // atributos
@@ -10,11 +11,11 @@ public class pessoa
     // métodos
     public void ImprimeDados()
     {
-        
+        JOptionPane.showMessageDialog(null, "nome: " + this.strNome + "\n Ano de nascimento: " + this.nAnoNascimento + "\n Telefone: " + this.strTelefone);
     }
     
-    public void CalcularIdade(int AnoAtual)
+    public void CalcularIdade(int nAnoAtual)
     {
-        
+        JOptionPane.showMessageDialog(null, nAnoAtual - this.nAnoNascimento + " anos.");
     }
 }
