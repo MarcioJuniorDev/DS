@@ -41,7 +41,7 @@ public class professor extends pessoa
         {
             if (this.dblSalario <= 2919.72)
             {
-                double dblInss = this.dblSalario - (this.dblSalario * 0.08);
+                double dblInss = this.dblSalario - this.dblSalario * 0.08;
                 this.dblSalario -= dblInss;
                 JOptionPane.showMessageDialog(null, "Salário: " + this.dblSalario + "\n Contribuição INSS: " + dblInss);
             }
@@ -49,17 +49,26 @@ public class professor extends pessoa
             {
                 if (this.dblSalario <= 5839.45)
                 {
-                    double dblInss = this.dblSalario - (this.dblSalario * 0.09);
+                    double dblInss = this.dblSalario - this.dblSalario * 0.09;
                 this.dblSalario -= dblInss;
                 JOptionPane.showMessageDialog(null, "Salário: " + this.dblSalario + "\n Contribuição INSS: " + dblInss);
                 }
                 else
                 {
-                    double dblInss = this.dblSalario - (this.dblSalario * 0.11);
+                    double dblInss = this.dblSalario - this.dblSalario * 0.11;
                 this.dblSalario -= dblInss;
                 JOptionPane.showMessageDialog(null, "Salário: " + this.dblSalario + "\n Contribuição INSS: " + dblInss);
                 }
             }
         }
+    }
+    
+        // construtor
+    professor(String strCTPS, int nHoraAula, double dblSalario, String strNome, int nAnoNascimento, String strTelefone)
+    {
+        super(strNome, nAnoNascimento, strTelefone);
+        this.strCTPS = strCTPS;
+        this.nHoraAula = nHoraAula;
+        this.dblSalario = dblSalario;
     }
 }

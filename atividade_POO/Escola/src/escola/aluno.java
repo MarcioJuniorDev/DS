@@ -21,4 +21,13 @@ public class aluno extends pessoa
             JOptionPane.showMessageDialog(null, "O aluno NÃO TEM direito à alimentação.");
         }
     }
+    
+    // construtor
+    aluno(String strRm, String strSerie, String strPeriodo, String strNome, int nAnoNascimento, String strTelefone)
+    {
+        super(strNome, nAnoNascimento, strTelefone);
+        this.strRm = strRm;
+        this.strSerie = strSerie;
+        this.strPeriodo = strPeriodo;
+    }
 }

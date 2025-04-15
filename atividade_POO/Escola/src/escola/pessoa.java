@@ -18,4 +18,12 @@ public class pessoa
     {
         JOptionPane.showMessageDialog(null, nAnoAtual - this.nAnoNascimento + " anos.");
     }
+    
+    // construtor
+    pessoa(String strNome, int nAnoNascimento, String strTelefone)
+    {
+        this.strNome = strNome;
+        this.nAnoNascimento = nAnoNascimento;
+        this.strTelefone = strTelefone;
+    }
 }
