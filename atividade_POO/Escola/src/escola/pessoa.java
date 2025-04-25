@@ -11,7 +11,10 @@ public class pessoa
     // métodos
     public void ImprimeDados()
     {
-        JOptionPane.showMessageDialog(null, "nome: " + this.strNome + "\n Ano de nascimento: " + this.nAnoNascimento + "\n Telefone: " + this.strTelefone);
+        JOptionPane.showMessageDialog(null,
+                "nome: " + this.strNome + 
+                "\n Ano de nascimento: " + this.nAnoNascimento + 
+                "\n Telefone: " + this.strTelefone);
     }
     
     public void CalcularIdade(int nAnoAtual)
@@ -20,7 +23,7 @@ public class pessoa
     }
     
     // construtor
-    pessoa(String strNome, int nAnoNascimento, String strTelefone)
+    public pessoa(String strNome, int nAnoNascimento, String strTelefone)
     {
         this.strNome = strNome;
         this.nAnoNascimento = nAnoNascimento;

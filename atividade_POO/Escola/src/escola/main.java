@@ -12,6 +12,9 @@ public class main
         aluno1.RecebeAlimentacao();
         professor1.TipoRegistro();
         professor1.CalculaSalario();
+        pessoa1.ImprimeDados();
+        aluno1.ImprimeDados();
+        professor1.ImprimeDados();
     }
     
 }

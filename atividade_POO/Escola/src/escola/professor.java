@@ -7,22 +7,22 @@ public class professor extends pessoa
     // atributos
     String strCTPS;
     int nHoraAula;
-    double dblSalario;
+    double dblInss, dblSalario;
     
     // métodos
     public void TipoRegistro()
     {
         if (this.nHoraAula == 0)
         {
-            this.dblSalario = 2600;
-            JOptionPane.showMessageDialog(null, "Seu salário é: " + this.dblSalario + "R$");
+            this.dblInss = 2600;
+            JOptionPane.showMessageDialog(null, "Seu salário é: " + this.dblInss + "R$");
         }
         else
         {
             if (this.nHoraAula <= 149)
             {
-                this.dblSalario = (this.nHoraAula * 30) * 1.3;
-                JOptionPane.showMessageDialog(null, "Seu salário é: " + this.dblSalario + "R$");
+                this.dblInss = (this.nHoraAula * 30) * 1.3;
+                JOptionPane.showMessageDialog(null, "Seu salário é: " + this.dblInss + "R$");
             }
             else
             {
@@ -33,42 +33,53 @@ public class professor extends pessoa
     
     public void CalculaSalario()
     {
-        if (this.dblSalario <= 1751.80)
+        if (this.dblInss <= 1751.80)
         {
             JOptionPane.showMessageDialog(null, "Não possui contribuição.");
         }
         else
         {
-            if (this.dblSalario <= 2919.72)
+            if (this.dblInss <= 2919.72)
             {
-                double dblInss = this.dblSalario - this.dblSalario * 0.08;
-                this.dblSalario -= dblInss;
-                JOptionPane.showMessageDialog(null, "Salário: " + this.dblSalario + "\n Contribuição INSS: " + dblInss);
+                dblSalario = this.dblInss - this.dblInss * 0.08;
+                this.dblInss -= dblSalario;
+                JOptionPane.showMessageDialog(null, "Salário: " + this.dblSalario + "\n Contribuição INSS: " + this.dblInss);
             }
             else
             {
-                if (this.dblSalario <= 5839.45)
+                if (this.dblInss <= 5839.45)
                 {
-                    double dblInss = this.dblSalario - this.dblSalario * 0.09;
-                this.dblSalario -= dblInss;
-                JOptionPane.showMessageDialog(null, "Salário: " + this.dblSalario + "\n Contribuição INSS: " + dblInss);
+                    dblSalario = this.dblInss - this.dblInss * 0.09;
+                this.dblInss -= dblSalario;
+                JOptionPane.showMessageDialog(null, "Salário: " + this.dblSalario + "\n Contribuição INSS: " + this.dblInss);
                 }
                 else
                 {
-                    double dblInss = this.dblSalario - this.dblSalario * 0.11;
-                this.dblSalario -= dblInss;
-                JOptionPane.showMessageDialog(null, "Salário: " + this.dblSalario + "\n Contribuição INSS: " + dblInss);
+                    dblSalario = this.dblInss - this.dblInss * 0.11;
+                this.dblInss -= dblSalario;
+                JOptionPane.showMessageDialog(null, "Salário: " + this.dblSalario + "\n Contribuição INSS: " + this.dblInss);
                 }
             }
         }
     }
     
+    @Override
+    public void ImprimeDados()
+    {
+        super.ImprimeDados();
+        JOptionPane.showMessageDialog(null,
+                "\n CTPS: " + this.strCTPS +
+                "\n Horas de aula: " + this.nHoraAula +
+                "\n Salário: " + (this.dblSalario + this.dblInss)
+        );
+    }
+    
         // construtor
-    professor(String strCTPS, int nHoraAula, double dblSalario, String strNome, int nAnoNascimento, String strTelefone)
+    public professor(String strCTPS, int nHoraAula, double dblInss, String strNome, int nAnoNascimento, String strTelefone)
     {
         super(strNome, nAnoNascimento, strTelefone);
         this.strCTPS = strCTPS;
         this.nHoraAula = nHoraAula;
-        this.dblSalario = dblSalario;
+        this.dblInss = dblInss;
     }
 }

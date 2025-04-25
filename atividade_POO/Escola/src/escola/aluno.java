@@ -22,8 +22,19 @@ public class aluno extends pessoa
         }
     }
     
+    @Override
+    public void ImprimeDados()
+    {
+        super.ImprimeDados();
+        JOptionPane.showMessageDialog(null,
+                "\n RM: " + this.strRm +
+                "\n Série: " + this.strSerie +
+                "\n Período: " + this.strPeriodo
+        );
+    }
+    
     // construtor
-    aluno(String strRm, String strSerie, String strPeriodo, String strNome, int nAnoNascimento, String strTelefone)
+    public aluno(String strRm, String strSerie, String strPeriodo, String strNome, int nAnoNascimento, String strTelefone)
     {
         super(strNome, nAnoNascimento, strTelefone);
         this.strRm = strRm;
