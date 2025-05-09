@@ -4,25 +4,27 @@ import javax.swing.JOptionPane;
 
 public class professor extends pessoa
 {
+    
     // atributos
-    String strCTPS;
-    int nHoraAula;
-    double dblInss, dblSalario;
+    private String strCTPS;
+    private int nHoraAula;
+    private double dblInss;
+    private double dblSalario;
     
     // métodos
     public void TipoRegistro()
     {
-        if (this.nHoraAula == 0)
+        if (this.getnHoraAula() == 0)
         {
-            this.dblInss = 2600;
-            JOptionPane.showMessageDialog(null, "Seu salário é: " + this.dblInss + "R$");
+            this.setDblInss(2600);
+            JOptionPane.showMessageDialog(null, "Seu salário é: " + this.getDblInss() + "R$");
         }
         else
         {
-            if (this.nHoraAula <= 149)
+            if (this.getnHoraAula() <= 149)
             {
-                this.dblInss = (this.nHoraAula * 30) * 1.3;
-                JOptionPane.showMessageDialog(null, "Seu salário é: " + this.dblInss + "R$");
+                this.setDblInss((this.getnHoraAula() * 30) * 1.3);
+                JOptionPane.showMessageDialog(null, "Seu salário é: " + this.getDblInss() + "R$");
             }
             else
             {
@@ -33,31 +35,31 @@ public class professor extends pessoa
     
     public void CalculaSalario()
     {
-        if (this.dblInss <= 1751.80)
+        if (this.getDblInss() <= 1751.80)
         {
             JOptionPane.showMessageDialog(null, "Não possui contribuição.");
         }
         else
         {
-            if (this.dblInss <= 2919.72)
+            if (this.getDblInss() <= 2919.72)
             {
-                dblSalario = this.dblInss - this.dblInss * 0.08;
-                this.dblInss -= dblSalario;
-                JOptionPane.showMessageDialog(null, "Salário: " + this.dblSalario + "\n Contribuição INSS: " + this.dblInss);
+                setDblSalario(this.getDblInss() - this.getDblInss() * 0.08);
+                this.setDblInss(this.getDblInss() - getDblSalario());
+                JOptionPane.showMessageDialog(null, "Salário: " + this.getDblSalario() + "\n Contribuição INSS: " + this.getDblInss());
             }
             else
             {
-                if (this.dblInss <= 5839.45)
+                if (this.getDblInss() <= 5839.45)
                 {
-                    dblSalario = this.dblInss - this.dblInss * 0.09;
-                this.dblInss -= dblSalario;
-                JOptionPane.showMessageDialog(null, "Salário: " + this.dblSalario + "\n Contribuição INSS: " + this.dblInss);
+                    setDblSalario(this.getDblInss() - this.getDblInss() * 0.09);
+                    this.setDblInss(this.getDblInss() - getDblSalario());
+                JOptionPane.showMessageDialog(null, "Salário: " + this.getDblSalario() + "\n Contribuição INSS: " + this.getDblInss());
                 }
                 else
                 {
-                    dblSalario = this.dblInss - this.dblInss * 0.11;
-                this.dblInss -= dblSalario;
-                JOptionPane.showMessageDialog(null, "Salário: " + this.dblSalario + "\n Contribuição INSS: " + this.dblInss);
+                    setDblSalario(this.getDblInss() - this.getDblInss() * 0.11);
+                    this.setDblInss(this.getDblInss() - getDblSalario());
+                JOptionPane.showMessageDialog(null, "Salário: " + this.getDblSalario() + "\n Contribuição INSS: " + this.getDblInss());
                 }
             }
         }
@@ -68,9 +70,9 @@ public class professor extends pessoa
     {
         super.ImprimeDados();
         JOptionPane.showMessageDialog(null,
-                "\n CTPS: " + this.strCTPS +
-                "\n Horas de aula: " + this.nHoraAula +
-                "\n Salário: " + (this.dblSalario + this.dblInss)
+                "\n CTPS: " + this.getStrCTPS() +
+                "\n Horas de aula: " + this.getnHoraAula() +
+                "\n Salário: " + (this.getDblSalario() + this.getDblInss())
         );
     }
     
@@ -81,5 +83,46 @@ public class professor extends pessoa
         this.strCTPS = strCTPS;
         this.nHoraAula = nHoraAula;
         this.dblInss = dblInss;
+    }
+    
+    // encapsulamento
+       public String getStrCTPS() 
+    {
+        return strCTPS;
+    }
+
+    public void setStrCTPS(String strCTPS) 
+    {
+        this.strCTPS = strCTPS;
+    }
+
+    public int getnHoraAula() 
+    {
+        return nHoraAula;
+    }
+
+    public void setnHoraAula(int nHoraAula) 
+    {
+        this.nHoraAula = nHoraAula;
+    }
+
+    public double getDblInss() 
+    {
+        return dblInss;
+    }
+
+    public void setDblInss(double dblInss) 
+    {
+        this.dblInss = dblInss;
+    }
+
+    public double getDblSalario() 
+    {
+        return dblSalario;
+    }
+
+    public void setDblSalario(double dblSalario) 
+    {
+        this.dblSalario = dblSalario;
     }
 }

@@ -5,14 +5,14 @@ import javax.swing.JOptionPane;
 public class aluno extends pessoa
 {
     // atributos
-    String strRm;
-    String strSerie;
-    String strPeriodo;
+    private String strRm;
+    private String strSerie;
+    private String strPeriodo;
     
     // métodos
     public void RecebeAlimentacao()
     {
-        if (this.strPeriodo == "ETIM")
+        if (this.getStrPeriodo() == "ETIM")
         {
             JOptionPane.showMessageDialog(null, "O aluno TEM direito à alimentação.");
         }
@@ -22,14 +22,15 @@ public class aluno extends pessoa
         }
     }
     
+    // método polimorfo
     @Override
     public void ImprimeDados()
     {
         super.ImprimeDados();
         JOptionPane.showMessageDialog(null,
-                "\n RM: " + this.strRm +
-                "\n Série: " + this.strSerie +
-                "\n Período: " + this.strPeriodo
+                "\n RM: " + this.getStrRm() +
+                "\n Série: " + this.getStrSerie() +
+                "\n Período: " + this.getStrPeriodo()
         );
     }
     
@@ -39,6 +40,37 @@ public class aluno extends pessoa
         super(strNome, nAnoNascimento, strTelefone);
         this.strRm = strRm;
         this.strSerie = strSerie;
+        this.strPeriodo = strPeriodo;
+    }
+    
+    // encapsulamento
+    public String getStrRm() 
+    {
+        return strRm;
+    }
+
+    public void setStrRm(String strRm) 
+    {
+        this.strRm = strRm;
+    }
+
+    public String getStrSerie() 
+    {
+        return strSerie;
+    }
+
+    public void setStrSerie(String strSerie) 
+    {
+        this.strSerie = strSerie;
+    }
+
+    public String getStrPeriodo() 
+    {
+        return strPeriodo;
+    }
+
+    public void setStrPeriodo(String strPeriodo) 
+    {
         this.strPeriodo = strPeriodo;
     }
 }
