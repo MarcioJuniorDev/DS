@@ -168,8 +168,15 @@ public class calculadora extends javax.swing.JFrame {
         if (preenchido())
         {
             converter();
+            if (dblNum2 != 0)
+            {
             dblValor = dblNum1 / dblNum2;
             JOptionPane.showMessageDialog(rootPane, dblValor);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(rootPane, "O divisor deve ser diferente de 0");
+            }
         }
         else
         {
