@@ -106,6 +106,7 @@ public class frmQuestao1 extends javax.swing.JFrame {
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
         if (rbB.isSelected())
         {
+            JOptionPane.showMessageDialog(rootPane, "é o goat é o bode");
             Controle b = new Controle();
             b.setnAcertos(1);
         }
@@ -120,6 +121,10 @@ public class frmQuestao1 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "burro burro");
             }
         }
+        
+        frmQuestao2 tela2 = new frmQuestao2();
+        tela2.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnEnviarActionPerformed
 
     /**

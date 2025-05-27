@@ -4,6 +4,8 @@
  */
 package pkgQuiz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Aluno
@@ -59,6 +61,11 @@ public class frmQuestao2 extends javax.swing.JFrame {
         });
 
         btnEnviar.setText("Enviar");
+        btnEnviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnviarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,6 +110,30 @@ public class frmQuestao2 extends javax.swing.JFrame {
     private void rbCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbCActionPerformed
+
+    private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
+        if (rbA.isSelected())
+        {
+            JOptionPane.showMessageDialog(rootPane, "é o goat é o bode");
+            Controle a = new Controle();
+            a.setnAcertos(a.getnAcertos()+1);
+        }
+        else
+        {
+            if (rbB.isSelected() || rbC.isSelected())
+            {
+                JOptionPane.showMessageDialog(rootPane, "FATAL ERROR");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(rootPane, "burro burro");
+            }
+        }
+        
+        frmQuestao3 tela3 = new frmQuestao3();
+        tela3.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnEnviarActionPerformed
 
     /**
      * @param args the command line arguments

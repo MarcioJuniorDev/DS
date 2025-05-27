@@ -4,6 +4,8 @@
  */
 package pkgQuiz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Aluno
@@ -54,6 +56,11 @@ public class frmQuestao3 extends javax.swing.JFrame {
         rbC.setText("5");
 
         btnEnviar.setText("Enviar");
+        btnEnviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnviarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -90,8 +97,29 @@ public class frmQuestao3 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void rbBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbBActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_rbBActionPerformed
+
+    private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
+if (rbB.isSelected())
+        {
+            JOptionPane.showMessageDialog(rootPane, "é o goat é o bode");
+            Controle b = new Controle();
+            b.setnAcertos(b.getnAcertos()+1);
+        }
+        else
+        {
+            if (rbA.isSelected() || rbC.isSelected())
+            {
+                JOptionPane.showMessageDialog(rootPane, "FATAL ERROR");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(rootPane, "burro burro");
+            }
+        }
+        this.dispose();
+    }//GEN-LAST:event_btnEnviarActionPerformed
 
     /**
      * @param args the command line arguments

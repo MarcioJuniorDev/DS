@@ -4,7 +4,8 @@ import javax.swing.JOptionPane;
 
 public class Controle 
 {
-    private int nAcertos;                   
+    // variavel estatica faz ela se tornar 
+    private static int nAcertos;                   
 
     // getters e setters
     public int getnAcertos() 
