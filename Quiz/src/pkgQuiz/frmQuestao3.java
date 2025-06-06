@@ -38,14 +38,15 @@ public class frmQuestao3 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Quantos finais o jogo tem?");
+        jLabel1.setText("Quantos episódios tem Naruto clássico?");
 
         grpResposta.add(rbA);
-        rbA.setText("2");
+        rbA.setSelected(true);
+        rbA.setText("270");
         rbA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         grpResposta.add(rbB);
-        rbB.setText("3");
+        rbB.setText("220");
         rbB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbBActionPerformed(evt);
@@ -53,7 +54,7 @@ public class frmQuestao3 extends javax.swing.JFrame {
         });
 
         grpResposta.add(rbC);
-        rbC.setText("5");
+        rbC.setText("250");
 
         btnEnviar.setText("Enviar");
         btnEnviar.addActionListener(new java.awt.event.ActionListener() {
@@ -67,7 +68,7 @@ public class frmQuestao3 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel1)
@@ -101,23 +102,18 @@ public class frmQuestao3 extends javax.swing.JFrame {
     }//GEN-LAST:event_rbBActionPerformed
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
-if (rbB.isSelected())
+        if (rbB.isSelected())
         {
-            JOptionPane.showMessageDialog(rootPane, "é o goat é o bode");
+            JOptionPane.showMessageDialog(rootPane, "acertou");
             Controle b = new Controle();
             b.setnAcertos(b.getnAcertos()+1);
         }
         else
         {
-            if (rbA.isSelected() || rbC.isSelected())
-            {
-                JOptionPane.showMessageDialog(rootPane, "FATAL ERROR");
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(rootPane, "burro burro");
-            }
+            JOptionPane.showMessageDialog(rootPane, "errou");
         }
+        frmQuestao4 tela4 = new frmQuestao4();
+        tela4.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnEnviarActionPerformed
 

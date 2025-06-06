@@ -38,14 +38,15 @@ public class frmQuestao1 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Qual o primeiro boss de Dark Souls 3?");
+        jLabel1.setText("<html>Quem é o Demônio da Névoa Oculta?</html>");
 
         grpResposta.add(rbA);
-        rbA.setText("Soul of Cinder");
+        rbA.setSelected(true);
+        rbA.setText("Kisame");
         rbA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         grpResposta.add(rbB);
-        rbB.setText("Iudex Gundir");
+        rbB.setText("Zabuza");
         rbB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbBActionPerformed(evt);
@@ -53,7 +54,7 @@ public class frmQuestao1 extends javax.swing.JFrame {
         });
 
         grpResposta.add(rbC);
-        rbC.setText("Abyss Watchers");
+        rbC.setText("Haku");
 
         btnEnviar.setText("Enviar");
         btnEnviar.addActionListener(new java.awt.event.ActionListener() {
@@ -67,11 +68,11 @@ public class frmQuestao1 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
+                .addContainerGap(54, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(rbA)
                             .addComponent(rbB)
                             .addComponent(rbC))
@@ -84,7 +85,7 @@ public class frmQuestao1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(jLabel1)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(rbA)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -106,20 +107,13 @@ public class frmQuestao1 extends javax.swing.JFrame {
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
         if (rbB.isSelected())
         {
-            JOptionPane.showMessageDialog(rootPane, "é o goat é o bode");
+            JOptionPane.showMessageDialog(rootPane, "acertou");
             Controle b = new Controle();
             b.setnAcertos(1);
         }
         else
         {
-            if (rbA.isSelected() || rbC.isSelected())
-            {
-                JOptionPane.showMessageDialog(rootPane, "FATAL ERROR");
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(rootPane, "burro burro");
-            }
+            JOptionPane.showMessageDialog(rootPane, "errou");
         }
         
         frmQuestao2 tela2 = new frmQuestao2();

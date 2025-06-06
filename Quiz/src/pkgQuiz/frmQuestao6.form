@@ -27,20 +27,18 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace pref="120" max="32767" attributes="0"/>
-              <Component id="btnEnviar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <Component id="rbA" min="-2" max="-2" attributes="0"/>
-                  <Component id="rbB" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="rbC" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbA" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbB" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbC" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="btnEnviar" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -66,7 +64,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Qual &#xe9; o nome do filho do Naruto?"/>
+        <Property name="text" type="java.lang.String" value="Qual &#xe9; o &#xfa;ltimo antagonista de Naruto?"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbA">
@@ -75,7 +73,7 @@
           <ComponentRef name="grpResposta"/>
         </Property>
         <Property name="selected" type="boolean" value="true"/>
-        <Property name="text" type="java.lang.String" value="Boruto"/>
+        <Property name="text" type="java.lang.String" value="Madara Uchiha"/>
         <Property name="horizontalAlignment" type="int" value="0"/>
       </Properties>
     </Component>
@@ -84,7 +82,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="grpResposta"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Roruto"/>
+        <Property name="text" type="java.lang.String" value="Kaguya"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbBActionPerformed"/>
@@ -95,11 +93,8 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="grpResposta"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Saruto"/>
+        <Property name="text" type="java.lang.String" value="Sasuke Uchiha"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbCActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnEnviar">
       <Properties>

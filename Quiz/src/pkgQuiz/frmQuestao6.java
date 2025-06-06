@@ -10,12 +10,12 @@ import javax.swing.JOptionPane;
  *
  * @author Aluno
  */
-public class frmQuestao2 extends javax.swing.JFrame {
+public class frmQuestao6 extends javax.swing.JFrame {
 
     /**
      * Creates new form frmInicio
      */
-    public frmQuestao2() {
+    public frmQuestao6() {
         initComponents();
     }
 
@@ -38,15 +38,15 @@ public class frmQuestao2 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Qual é o nome do filho do Naruto?");
+        jLabel1.setText("Qual é o último antagonista de Naruto?");
 
         grpResposta.add(rbA);
         rbA.setSelected(true);
-        rbA.setText("Boruto");
+        rbA.setText("Madara Uchiha");
         rbA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         grpResposta.add(rbB);
-        rbB.setText("Roruto");
+        rbB.setText("Kaguya");
         rbB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbBActionPerformed(evt);
@@ -54,12 +54,7 @@ public class frmQuestao2 extends javax.swing.JFrame {
         });
 
         grpResposta.add(rbC);
-        rbC.setText("Saruto");
-        rbC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbCActionPerformed(evt);
-            }
-        });
+        rbC.setText("Sasuke Uchiha");
 
         btnEnviar.setText("Enviar");
         btnEnviar.addActionListener(new java.awt.event.ActionListener() {
@@ -72,18 +67,16 @@ public class frmQuestao2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(120, Short.MAX_VALUE)
-                .addComponent(btnEnviar)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1)
+                        .addComponent(rbA)
+                        .addComponent(rbB)
+                        .addComponent(rbC))
+                    .addComponent(btnEnviar))
                 .addGap(105, 105, 105))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(rbA)
-                    .addComponent(rbB)
-                    .addComponent(rbC))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,23 +98,22 @@ public class frmQuestao2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void rbBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbBActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_rbBActionPerformed
 
-    private void rbCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbCActionPerformed
-
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
-        if (rbA.isSelected())
+        if (rbC.isSelected())
         {
             JOptionPane.showMessageDialog(rootPane, "acertou");
-            Controle a = new Controle();
-            a.setnAcertos(a.getnAcertos()+1);
+            Controle c = new Controle();
+            c.setnAcertos(c.getnAcertos()+1);
         }
-        
-        frmQuestao3 tela3 = new frmQuestao3();
-        tela3.setVisible(true);
+         else
+        {
+            JOptionPane.showMessageDialog(rootPane, "errou");
+        }
+        Resultado resultado = new Resultado();
+        resultado.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnEnviarActionPerformed
 
@@ -142,21 +134,35 @@ public class frmQuestao2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmQuestao2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmQuestao6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmQuestao2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmQuestao6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmQuestao2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmQuestao6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmQuestao2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmQuestao6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmQuestao2().setVisible(true);
+                new frmQuestao6().setVisible(true);
             }
         });
     }
