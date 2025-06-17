@@ -4,11 +4,18 @@
  */
 package prj_sorteio;
 
+import java.util.ArrayList;
+import java.util.Random;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author Aluno
  */
 public class jf_sorteio extends javax.swing.JFrame {
+    ArrayList<String> sorteio = new ArrayList<>();
+    DefaultListModel<String> model = new DefaultListModel<>();
+    int tamanho = 0;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(jf_sorteio.class.getName());
 
@@ -32,6 +39,12 @@ public class jf_sorteio extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jListSorteados = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jListRemovidos = new javax.swing.JList<>();
+        btnSorteio = new javax.swing.JButton();
+        btnRemover = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -54,6 +67,19 @@ public class jf_sorteio extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/tigrinho2.png"))); // NOI18N
         jLabel2.setText("jLabel2");
 
+        jScrollPane1.setViewportView(jListSorteados);
+
+        jScrollPane2.setViewportView(jListRemovidos);
+
+        btnSorteio.setText("Sorteio");
+        btnSorteio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSorteioActionPerformed(evt);
+            }
+        });
+
+        btnRemover.setText("Remover");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -61,14 +87,33 @@ public class jf_sorteio extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1)
+                    .addComponent(btnSorteio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2)
+                    .addComponent(btnRemover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(118, 118, 118))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addComponent(jScrollPane2))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnSorteio)
+                            .addComponent(btnRemover)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2)))
+                .addGap(14, 14, 14))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -86,6 +131,22 @@ public class jf_sorteio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSorteioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSorteioActionPerformed
+        int number;
+        Random rand = new Random();
+        
+        number = rand.nextInt(60);
+        
+        sorteio.add(String.valueOf(number));
+        model.clear();
+        
+        for(String dado:sorteio)
+        {
+            model.addElement(dado);
+        }
+        jListSorteados.setModel(model);
+    }//GEN-LAST:event_btnSorteioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,9 +174,15 @@ public class jf_sorteio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRemover;
+    private javax.swing.JButton btnSorteio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JList<String> jListRemovidos;
+    private javax.swing.JList<String> jListSorteados;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }
