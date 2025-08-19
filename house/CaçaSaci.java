@@ -1,38 +1,64 @@
 package house;
 import robocode.*;
-import java.awt.Color;
 import java.lang.Math;
 
 public class CaçaSaci extends Robot
 {
-	double nDirecao;
+	double dblDirecao, dblDistancia, dblMira;
+	String strModo;
 	public void run() 
 	{
 		while(true) 
 		{
-			moveinsana();
-		}
-	}
-
-	public void moveinsana()
-	{
-		if (getEnergy() < 20)
-		{
-			nDirecao = Math.random();
-			if (nDirecao <= 0.5)
+		turnRadarRight(360);
+			if (getEnergy() >= 50)
 			{
-				back(Math.random() * 500);
+				strModo = "cabeçada";
 			}
 			else
 			{
-				ahead(Math.random() * 500);
+				strModo = "atirador";
+			}
+			
+			if (strModo.equals("cabeçada"))
+			{
+
+			}
+			else
+			{
+				moveinsana();
 			}
 		}
 	}
+	
+	public void cabecada()
+	{	
+		
+	}
+
+	public void atirador()
+	{	
+		
+	}
+	public void moveinsana()
+	{
+		dblDirecao = Math.random();
+		if (dblDirecao <= 0.5)
+		{
+			back(Math.random() * 500);
+		}
+		else
+		{
+			ahead(Math.random() * 500);
+		}	
+	}	
 
 	public void onScannedRobot(ScannedRobotEvent e) 
 	{
-
+		dblDistancia = e.getDistance();
+		dblMira = getRadarHeading() - getHeading();
+		turnRight(dblMira);
+		ahead(dblDistancia);
 	}
 		
 	public void onHitByBullet(HitByBulletEvent e) 
