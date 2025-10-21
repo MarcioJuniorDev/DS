@@ -10,7 +10,8 @@ public class frmLogin extends javax.swing.JFrame {
     public frmLogin() {
         initComponents();
         setLayout(new BorderLayout());
-        Background fundo = new Background("C:\\Users\\Aluno\\Desktop\\DS\\ProjetoManutencao\\src\\UI\\assets\\fundo.png");
+        // Background fundo = new Background("C:\\Users\\Aluno\\Desktop\\DS\\ProjetoManutencao\\src\\UI\\assets\\fundo.png");
+        Background fundo = new Background(getClass().getResource("/UI/assets/fundo.png").getPath());
         getContentPane().add(fundo);
     }
 
